@@ -16,8 +16,22 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-light mb-5">
       <div class="container">
-        <a class="navbar-brand shadow-sm p-2 bg-body rounded border border-primary text-primary fw-bold"
-          href="#">🪣 List</a>
+        <!-- <a class="navbar-brand shadow-sm p-2 bg-body rounded border border-primary text-primary fw-bold"
+          href="#">Your 🪣 List</a> -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary">Your 🪣 List</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          
         <button
           class="navbar-toggler"
           type="button"
@@ -29,23 +43,6 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Example split danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Action</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="visually-hidden">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>
-
-
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
