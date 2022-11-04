@@ -1,0 +1,16 @@
+Project 2 Checklist
+Come up with an original idea
+Update google doc with slack channel, team name, and project idea
+
+Confirm default branch is set to main
+Add everyone in the group as a contributor
+Turn on the following settings
+"Require pull request reviews before merging"
+"Include administrators"
+Wireframe the different views
+Decide on a CSS library/framework
+Decide on a new technology
+Eg: Typescript, Charts.js, lodash, Popper.js, passportjs, etc… 
+Will the project include third-party APIs?
+If so, I recommend making the call to the service from your controller. This will make all COR related issues go away, and make it easier to include the data within the handlebars template. It's still okay to make a fetch from the browser/ 
+https://www.npmjs.com/package/node-fetch
