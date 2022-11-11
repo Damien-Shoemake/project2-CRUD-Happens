@@ -1,0 +1,42 @@
+[
+    {
+        "user_id": 1,
+        "post_id": 5,
+        "comment_text": "This is amazing!"
+    },
+    {
+        "user_id": 2,
+        "post_id": 4,
+        "comment_text": "That's pretty cool!"
+    },
+    {
+        "user_id": 5,
+        "post_id": 1,
+        "comment_text": "Lord knows I could NEVER!"
+    },
+    {
+        "user_id": 3,
+        "post_id": 2,
+        "comment_text": "I've seen it myself... It really is breathtaking."
+    },
+    {
+        "user_id": 2,
+        "post_id": 3,
+        "comment_text": "Yes, I would be cautious!"
+    },
+    {
+        "user_id": 3,
+        "post_id": 4,
+        "comment_text": "Maybe I should go to the Grand Canyon instead of white water rafting..."
+    },
+    {
+        "user_id": 5,
+        "post_id": 3,
+        "comment_text": "Tbh I wouldn't worry about it"
+    },
+    {
+        "user_id": 2,
+        "post_id": 1,
+        "comment_text": "Ayyo??"
+    }
+]

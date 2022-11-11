@@ -1,0 +1,28 @@
+[
+    {
+        "title": "I learned how to skydive!",
+        "post_content": "It was one of the most thrilling experiences of my life... I still can't believe I went through with it! We truly are outside!!",
+        "user_id": 1
+    },
+    {
+        "title": "You wouldn't believe how big the Eiffel Tower is...",
+        "post_content": "I spent the week in France. It was a mind blowing experience! It's true what they say about the culture there, it's truly lively.",
+        "user_id": 2
+    },
+    {
+        "title": "Is it true that whitewater rafting is dangerous for out of shape people?",
+        "post_content": "I've always wanted to go white water rafting but I think it'll be a bit ambitious for me to do so with my husband's health. Is there anybody who can help me with that?",
+        "user_id": 3
+
+    },
+    {
+        "title": "The Grand Canyon is... pretty grand!",
+        "post_content": "I've been completely floored by the vibrant colors and breath taking natural beauty of the Grand Canyon! It's insane! I'm not really a nature guy... or I wasn't... until now. I cannot believe how much I love it out here!",
+        "user_id": 4
+    },
+    {
+        "title": "I learned how to code!",
+        "post_content": "Might not mean much to you at home, but I'm finally taking the plunge to learn how to code! Before I started, I wasn't even tech savvy enough to operate a 1980s toaster! Now I'm playing God of War: Ragnarok on my Samsung Smart Fridge after converting the source code to JavaScript!!",
+        "user_id": 5
+    }
+]
