@@ -1,0 +1,1 @@
+// homeLogin.addEventListener('click', console.log('boom'));
