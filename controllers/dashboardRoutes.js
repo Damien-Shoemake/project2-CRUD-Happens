@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
 // dashboard displaying posts created by logged in users 
-router.get('/', (req, res) => {
+router.get('/dashboard', (req, res) => {
     res.render('dashboard');
   });
 
