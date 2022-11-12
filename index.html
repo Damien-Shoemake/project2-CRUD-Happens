@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./public/style/style.css"/>
     <title>Bucket List</title>
   </head>
   <body>
@@ -60,7 +61,7 @@
 
 <!-- header start-->
     <div class="container">
-      <div class="px-4 py-5 my-5 text-center">
+      <div class="px-4 py-4 my-4 text-center">
         <p class="d-block mx-auto mb-4 display-1">🪣</p>
         <h1 class="fw-bold display-2">Bucket List Blog</h1>
         <div class="col-lg-6 mx-auto">
@@ -77,110 +78,22 @@
       </div>
 <!-- header end -->
 
-      <div class="card mb-3">
-        <div class="card-header text-primary fw-bold fs-5 mb-3">Comment</div>
-        <div class="mb-3">
-          <div class="card-body">
-            <textarea
-              class="form-control mb-3"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-            <button type="submit" class="btn btn-primary">Submit!</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <div class="card-header text-primary fw-bold fs-5">Login</div>
+<!-- api button click result start -->
+      <div id="apiSection" class="card text-center hidden">
+        <h5 class="card-header">New idea</h5>
         <div class="card-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Username</label
-              >
-              <input type="text" class="form-control" />
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Password</label
-              >
-              <input type="password" class="form-control" />
-            </div>
-          </form>
-          <button type="submit" class="btn btn-primary">Login!</button>
+          <h5 class="card-title">API Result here</h5>
+          <button class="btn btn-primary">Add to my bucket list!</button>
         </div>
       </div>
+<!-- api button click result end -->
 
-      <div class="card mb-3">
-        <div class="card-header text-primary fw-bold fs-5">SignUp</div>
-        <div class="card-body">
-          <form>
-            <div class="mb-3">
-              <label for="validationServerUsername" class="form-label"
-                >Username</label
-              >
-              <input type="text" class="form-control" />
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Password</label
-              >
-              <input type="password" class="form-control" />
-            </div>
-          </form>
-
-          <button type="submit" class="btn btn-primary mb-3">SignUp!</button>
-        </div>
-      </div>
-
-      <div class="card mb-3">
-        <div class="card-header text-primary fw-bold fs-5">Edit Post</div>
-        <div class="card-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputUsern" class="form-label">Title</label>
-              <input type="Username" class="form-control" />
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputUsern" class="form-label">Content</label>
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="2"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-            <button type="submit" class="btn btn-primary">Delete</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header text-primary fw-bold fs-5">Create New Post</div>
-        <div class="card-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputUsern" class="form-label">Title</label>
-              <input type="Username" class="form-control" />
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputUsern" class="form-label">Content</label>
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="2"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Create</button>
-          </form>
-        </div>
-      </div>
-      
-    </div>
     <!-- popper and bootstrap  -->
     <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <script src="./public/js/idea.js"></script>
   </body>
