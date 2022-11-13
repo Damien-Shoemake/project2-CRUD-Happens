@@ -2,21 +2,21 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// GET /api/users
+// GET /api/user, get all the users
 router.get('/', async (req, res) => {
     // Access our User model and run .findAll() method
     try {
         const users = await User.findAll({
             attributes: { exclude: ['password'] }
         })
-        res.json(users)
+        res.status(200).json(users)
         
     } catch {
         res.status(500).json({ message: 'Server Error'})
     }
 });
 
-// GET /api/users/1
+// GET /api/user/id, set a single user by id
 router.get('/:id', async (req, res) => {
     try {
         const newUser = await User.findOne({
@@ -53,45 +53,51 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// post user to db
+// Post api/user, create a new user in db
+// This is where it connects to login.js and fires the fetch('/api/user) -> sign up
 router.post('/', async (req, res) => {
-    const newUser = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    })
-    
-    
-    await req.session.save(() => {
-        req.session.user_id = newUser.id;
-        req.session.name = newUser.name;
-        req.session.loggedIn = true;
-    
-        res.json(newUser);
-      });
+    try {
+      const newUser = await User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+      })
+      
+      
+      req.session.save(() => {
+          req.session.user_id = newUser.id;
+          req.session.name = newUser.name;
+          req.session.loggedIn = true;
+      
+          res.status(201).json(newUser);
+        });
+    } catch (error) {
+      res.status(400).json(error)
+    }
 });
 
-  // login route
+  // POST api/user/login Login route
+  // This is where it connects to login.js and fires the fetch('/api/user/login) -> login
   router.post('/login', async (req, res) => {
     try {
         const userLogin = User.findOne({
             where: {
-              email: req.body.email
+              name: req.body.name
             }
           })
           if (!userLogin) {
-              res.status(400).json({ message: 'Password or email incorrect!' });
+              res.status(400).json({ message: 'Password incorrect!' });
               return;
           }
         
             const validPassword = userLogin.checkPassword(req.body.password);
         
             if (!validPassword) {
-              res.status(400).json({ message: 'Password or email incorrect!' });
+              res.status(400).json({ message: 'Password incorrect!' });
               return;
             }
         
-          await req.session.save(() => {
+          req.session.save(() => {
               req.session.user_id = userLogin.id;
               req.session.name = userLogin.name;
               req.session.loggedIn = true;
@@ -104,7 +110,7 @@ router.post('/', async (req, res) => {
     
 });
 
-
+// POST /api/user, log out
   router.post('/logout', async (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -115,45 +121,5 @@ router.post('/', async (req, res) => {
       res.status(404).end();
     }
 });
-
-//update user
-router.put('/:id', withAuth, async (req, res) => {
-    try {
-        const updateUser = await User.update(req.body, {
-            individualHooks: true,
-            where: {
-                id: req.params.id
-          }
-        })
-            if (!updateUser[0]) {
-              res.status(404).json({ message: 'No user with this ID found!' });
-              return;
-            } else {
-                res.json(updateUser);
-            }
-    } catch {
-        res.status(500).json({ message: 'Server Error'})
-    }
-    
-});
-
-// delete a user 
-router.delete('/:id', withAuth, async (req, res) => {
-    try {
-        const deleteUser = await User.destroy({
-            where: {
-              id: req.params.id
-            }
-          })
-              if (!deleteUser) {
-                res.status(404).json({ message: 'No user with this ID found!' });
-                return;
-              }
-              res.json(deleteUser);
-    } catch {
-        res.status(500).json({ message: 'Server Error'})
-    }
-
-})
 
 module.exports = router;
