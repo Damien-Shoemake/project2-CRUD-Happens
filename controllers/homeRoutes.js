@@ -2,6 +2,7 @@ const router = require("express").Router()
 const sequelize = require("../config/connection")
 const { Post, User, Comment } = require("../models")
 
+// GET /, rendering all the bucket lists on the homepage
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.findAll({
@@ -31,6 +32,8 @@ router.get("/", async (req, res) => {
   }
 })
 
+// rendering the login page
+// redirecting users to homepage once they log in
 router.get("/login", async (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/")
@@ -39,14 +42,17 @@ router.get("/login", async (req, res) => {
   res.render("login")
 })
 
+// rendering sign up page 
+// redirecting users to the login once they sign up
 router.get("/signup", async (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/")
+    res.redirect("/login")
     return
   }
   res.render("signup")
 })
 
+// rendering one post to the single-post page
 router.get("/post/:id", async (req, res) => {
   try {
     const post = await Post.findOne({
