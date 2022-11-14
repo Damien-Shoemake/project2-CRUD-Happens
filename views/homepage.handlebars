@@ -32,6 +32,15 @@
 </div>
 <!-- api button click result end -->
 
+<!-- Post Form -->
+<ul>
+  {{#each posts as |post|}}
+  <li>
+    {{>post-info post}}
+  </li>
+  {{/each}}
+</ul>
+
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="./js/idea.js"></script>
