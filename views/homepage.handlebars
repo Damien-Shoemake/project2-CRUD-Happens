@@ -1,32 +1,37 @@
 <!-- header start-->
-    <div class="container">
-      <div class="px-4 py-5 my-5 text-center">
-        <p class="d-block mx-auto mb-4 display-1">🪣</p>
-        <h1 class="fw-bold display-2">Bucket List Blog</h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Quickly find bucket list ideas. Create your own bucket list. Follow others as they journey to the end.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button id="homeIdea" type="button" class="btn btn-success btn-lg px-4 my-4">Get an idea</button>
-          </div>
-        </div>
+<div class="container">
+  <div class="px-4 py-5 my-5 text-center">
+    <p class="d-block mx-auto mb-4 display-1">🪣</p>
+    <h1 class="fw-bold display-2">Bucket List Blog</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Quickly find bucket list ideas. Create your own
+        bucket list. Follow others as they journey to the end.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button
+          id="homeIdea"
+          type="button"
+          class="btn btn-success btn-lg px-4 my-4"
+        >Get an idea</button>
       </div>
-      </div>
+    </div>
+  </div>
+</div>
 <!-- header end -->
 
 <!-- api button click result start -->
-      <div id="apiSection" class="card text-center hidden">
-        <h5 class="card-header">New idea</h5>
-        <div class="card-body">
-          <h5 id="card-title" class="card-title">API Result here</h5>
-          {{!-- {{#if logged_in}} --}}
-          <button class="btn btn-primary">Add to my bucket list!</button>
-              {{!-- {{else}} --}}
-              <a class="btn btn-primary" href="/login">Login</a>
-              {{!-- {{/if}} --}}
-        </div>
-      </div>
+<div id="apiSection" class="card text-center hidden">
+  <h5 class="card-header">New idea</h5>
+  <div class="card-body">
+    <h5 id="card-title" class="card-title">API Result here</h5>
+    {{!-- {{#if logged_in}} --}}
+    <button class="btn btn-primary">Add to my bucket list!</button>
+    {{!-- {{else}} --}}
+    <a class="btn btn-primary" href="/login">Login</a>
+    {{!-- {{/if}} --}}
+  </div>
+</div>
 <!-- api button click result end -->
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="/js/idea.js"></script>
+<script src="./js/idea.js"></script>

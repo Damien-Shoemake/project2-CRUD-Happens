@@ -1,14 +1,29 @@
-<div class="row g-5">
-    <div class="col-md-8">
-        <h3 class="pb-4 mb-4 fst-italic border-bottom">New post</h3>
-        <div id="blogPostTitle">
-            <label for="title">Title</label>
-            <input type="text">
-            <button type="submit">Submit</button>
-        </div>
-        <div id="blogPostContent">
-            <label for="title">Content</label>
-            <textarea rows="4" cols="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
-        </div>
-    </div>
+<!-- New Post Form -->
+<div class="card">
+  <div class="card-header text-primary fw-bold fs-5">Create New Bucket List</div>
+  <div class="card-body">
+    <form id="new-post-form">
+      <div class="mb-3">
+        <label for="post-title" class="form-label">Title</label>
+        <input
+          type="Username"
+          id="post-title"
+          name="post-title"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="post_content" class="form-label">Content</label>
+        <textarea
+          class="form-control"
+          id="content"
+          name="post_content"
+          rows="2"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
 </div>
+
+<script src="/js/add-post.js"></script>

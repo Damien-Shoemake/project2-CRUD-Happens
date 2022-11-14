@@ -1,0 +1,13 @@
+<!-- Post Form -->
+      <div class="card mb-3">
+        <div class="card-header text-primary fw-bold fs-5">{{title}}
+          <h6 class="text-end">Posted by {{user.name}} on {{format_date created_at}}</h6>
+        </div>
+        <div class="card-body">
+          <p>
+            {{post_content}}
+          </p>
+          <a href="/post/{{id}}">{{comments.length}}
+          {{format_plural "comment" comment.length}}</a>
+        </div>
+      </div>

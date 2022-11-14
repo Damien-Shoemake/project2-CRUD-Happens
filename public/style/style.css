@@ -5,3 +5,15 @@
 .show {
     display: initial;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #new-trigger {
+    position: relative;
+    left: 44%;
+  }
+  
