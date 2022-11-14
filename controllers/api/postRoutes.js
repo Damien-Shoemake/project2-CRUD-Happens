@@ -1,15 +1,9 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
-const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
-const { post } = require('../homeRoutes');
-const { update } = require('../../models/User');
-
 
 //get all posts
 router.get('/', async (req, res) => {
-    
-    
     try 
     {
         const allPosts = await Post.findAll({

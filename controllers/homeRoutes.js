@@ -1,11 +1,11 @@
+// This contains all of the user-facing routes, such as the homepage, login and signup page
 const router = require("express").Router()
-const sequelize = require("../config/connection")
 const { Post, User, Comment } = require("../models")
 
 // GET /, rendering all the bucket lists on the homepage
 router.get("/", async (req, res) => {
   try {
-    const posts = await Post.findAll({
+    const postData = await Post.findAll({
       attributes: ["id", "title", "created_at", "post_content"],
       include: [
         {
@@ -23,9 +23,12 @@ router.get("/", async (req, res) => {
       ],
     })
 
+    const posts = postData.map((post) => post.get({ plain: true }))
+
     res.render("homepage", {
       posts,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
+      name: req.session.name,
     })
   } catch (e) {
     res.status(500).json(e)
@@ -34,19 +37,19 @@ router.get("/", async (req, res) => {
 
 // rendering the login page
 // redirecting users to homepage once they log in
-router.get("/login", async (req, res) => {
-  if (req.session.loggedIn) {
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
     res.redirect("/")
     return
   }
   res.render("login")
 })
 
-// rendering sign up page 
+// rendering sign up page
 // redirecting users to the login once they sign up
-router.get("/signup", async (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/login")
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/")
     return
   }
   res.render("signup")
@@ -80,7 +83,8 @@ router.get("/post/:id", async (req, res) => {
 
     res.render("single-post", {
       singlePost,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
+      name: req.session.name,
     })
   } catch (e) {
     res.status(500).json({ message: "Server Error" })
