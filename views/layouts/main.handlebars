@@ -19,11 +19,17 @@
     <!-- navbar start-->
    <nav class="navbar navbar-expand-lg bg-light mb-5">
       <div class="container">
-        {{!-- {{#if logged_in}} --}}
+        {{#if logged_in}}
         <a
           class="navbar-brand shadow-sm p-2 bg-body rounded border border-primary text-primary fw-bold"
           href="#"
-          >🪣 List</a
+          >Your 🪣 List</a
+        >
+        {{else}}
+        <a
+          class="navbar-brand shadow-sm p-2 bg-body rounded border border-primary text-primary fw-bold"
+          href="#"
+          >🪣 List Blog</a
         >
         <button
           class="navbar-toggler"
@@ -36,7 +42,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        {{!-- {{/if}} --}}
+        {{/if}}
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
