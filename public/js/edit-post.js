@@ -1,6 +1,5 @@
 async function editFormHandler(event) {
   event.preventDefault()
-  console.log(event.target)
 
   const title = document.querySelector('input[name="post-title"]').value.trim()
   const post_content = document
