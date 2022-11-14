@@ -2,7 +2,9 @@ const homeIdea = document.getElementById("homeIdea")
 
 async function idea() {
   const parent = $(this).parent().parent().parent().parent().siblings(".hidden")
-  $(parent).toggleClass("show")
+//   $(parent).toggleClass("show")
+  $(parent).removeClass("hidden")
+  $(parent).addClass("show")
 
   const response = await fetch("/bucketlist", {
     method: "GET",
@@ -14,6 +16,7 @@ async function idea() {
       let title = document.getElementById("card-title")
       title.innerHTML = result.item
     })
+
 }
 homeIdea.addEventListener("click", idea)
 
