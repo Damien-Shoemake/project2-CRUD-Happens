@@ -15,16 +15,19 @@ async function idea() {
     })
     .then((result) => {
       let title = document.getElementById("card-title")
-      title.innerHTML = result.item
-    })
+      let ideaResult = title.innerHTML = result.item
+      console.log(result);
+      console.log(result.item);
 
+    function addNewBucketItem (ideaResult) {
+        const bucketItem = document.getElementById("theBucketItem");
+        const bucketList = document.getElementById("theBucketList");
+        bucketList.removeAttribute('class')
+        bucketItem.textContent = result.item;    
+    }
+    addBucketItem.onclick = addNewBucketItem;
+
+    })
 }
 homeIdea.addEventListener("click", idea);
-
-function addNewBucketItem () {
-    console.log(addBucketItem);
-    // here
-}
-
-addBucketItem.addEventListener("click", addNewBucketItem);
 
