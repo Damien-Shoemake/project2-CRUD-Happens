@@ -1,17 +1,21 @@
 const homeIdea = document.getElementById('homeIdea');
 
 async function idea() {
-    const parent = $(this).parent().parent().parent().parent().siblings(".hidden"); // this code works
-    $( parent ).toggleClass( "show" ); // this code works
+    const parent = $(this).parent().parent().parent().parent().siblings(".hidden");
+    $( parent ).toggleClass( "show" ); 
 
-    const response = await fetch ('/controllers/bucketlistRoutes', { // this code does not work
+    const response = await fetch ('/bucketlist', { 
         method: "GET"
-    });
+    })
+    .then((result) => {
+        return result.json();
+    })
+    .then((result) => {
+        console.log(result.item);
+    })
 
-    console.log(response); // this code does something but not sure what is going on
-    
 }
-homeIdea.addEventListener('click', idea); // this code works
+homeIdea.addEventListener('click', idea);
 
 // place code from gunnner in slack here or inside idea()
 
