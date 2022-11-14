@@ -1,6 +1,6 @@
 <!-- header start-->
 <div class="container">
-  <div class="px-4 py-5 my-5 text-center">
+  <div class="pt-4 pb-2 py-5 mt-5 text-center">
     <p class="d-block mx-auto mb-4 display-1">🪣</p>
     <h1 class="fw-bold display-2">Bucket List Blog</h1>
     <div class="col-lg-6 mx-auto">
@@ -20,14 +20,14 @@
 
 <!-- api button click result start -->
 <div id="apiSection" class="card text-center hidden">
-  <h5 class="card-header">New idea</h5>
+  <h5 class="card-header">Let's go!</h5>
   <div class="card-body">
-    <h5 id="card-title" class="card-title">API Result here</h5>
-    {{!-- {{#if logged_in}} --}}
-    <button class="btn btn-primary">Add to my bucket list!</button>
-    {{!-- {{else}} --}}
-    <a class="btn btn-primary" href="/login">Login</a>
-    {{!-- {{/if}} --}}
+    <h5 id="card-title" class="card-title mb-0 pb-3">API Result here</h5>
+    {{#if logged_in}}
+    <button id="addBucketItem" class="btn btn-primary">Add to my bucket list!</button>
+    {{else}}
+    <a class="btn btn-primary" href="/login">Add to my bucket list!</a>
+    {{/if}}
   </div>
 </div>
 <!-- api button click result end -->

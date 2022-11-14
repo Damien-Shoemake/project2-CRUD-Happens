@@ -1,8 +1,11 @@
-const homeIdea = document.getElementById("homeIdea")
+const homeIdea      = document.getElementById("homeIdea");
+const addBucketItem = document.getElementById("addBucketItem");
 
 async function idea() {
   const parent = $(this).parent().parent().parent().parent().siblings(".hidden")
-  $(parent).toggleClass("show")
+//   $(parent).toggleClass("show")
+  $(parent).removeClass("hidden")
+  $(parent).addClass("show")
 
   const response = await fetch("/bucketlist", {
     method: "GET",
@@ -14,7 +17,14 @@ async function idea() {
       let title = document.getElementById("card-title")
       title.innerHTML = result.item
     })
-}
-homeIdea.addEventListener("click", idea)
 
-// place code from gunnner in slack here or inside idea()
+}
+homeIdea.addEventListener("click", idea);
+
+function addNewBucketItem () {
+    console.log(addBucketItem);
+    // here
+}
+
+addBucketItem.addEventListener("click", addNewBucketItem);
+
