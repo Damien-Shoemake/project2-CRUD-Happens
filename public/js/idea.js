@@ -11,9 +11,12 @@ async function idea() {
         return result.json();
     })
     .then((result) => {
-        console.log(result.item);
+    
+        let title = document.getElementById('card-title');
+        title.innerHTML = result.item;
     })
 
+    
 }
 homeIdea.addEventListener('click', idea);
 
