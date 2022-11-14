@@ -18,7 +18,11 @@
         <h5 class="card-header">New idea</h5>
         <div class="card-body">
           <h5 id="card-title" class="card-title">API Result here</h5>
+          {{!-- {{#if logged_in}} --}}
           <button class="btn btn-primary">Add to my bucket list!</button>
+              {{!-- {{else}} --}}
+              <a class="btn btn-primary" href="/login">Login</a>
+              {{!-- {{/if}} --}}
         </div>
       </div>
 <!-- api button click result end -->
