@@ -1,4 +1,5 @@
-const homeIdea = document.getElementById("homeIdea")
+const homeIdea      = document.getElementById("homeIdea");
+const addBucketItem = document.getElementById("addBucketItem");
 
 async function idea() {
   const parent = $(this).parent().parent().parent().parent().siblings(".hidden")
@@ -18,6 +19,12 @@ async function idea() {
     })
 
 }
-homeIdea.addEventListener("click", idea)
+homeIdea.addEventListener("click", idea);
 
-// place code from gunnner in slack here or inside idea()
+function addNewBucketItem () {
+    console.log(addBucketItem);
+    // here
+}
+
+addBucketItem.addEventListener("click", addNewBucketItem);
+
