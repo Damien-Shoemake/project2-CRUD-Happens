@@ -8,25 +8,24 @@ router.get("/", async (req, res) => {
     const allPosts = await Post.findAll({
       attributes: ["id", "title", "post_content", "created_at"],
       order: [["created_at", "DESC"]],
-      include: [
-        {
-          model: Comment,
-          attributes: ["id, comment", "post_id", "user_id", "created_at"],
-          include: {
-            model: User,
-            attributes: ["name"],
-          },
-        },
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
+       include: [
+         {
+           model: Comment,
+           include: {
+             model: User,
+             attributes: ["name"],
+           },
+         },
+         {
+           model: User,
+           attributes: ["name"],
+         },
+       ],
     })
 
     res.json(allPosts)
   } catch (e) {
-    res.status(500).json({ message: "Server Error" })
+    res.status(500).json({ message: "Server Error get all" })
   }
 })
 
@@ -63,7 +62,7 @@ router.get("/:id", async (req, res) => {
       res.json(onePost)
     }
   } catch (e) {
-    res.status(500).json({ message: "Server Error" })
+    res.status(500).json({ message: "Server Error get one" })
   }
 })
 
@@ -78,7 +77,7 @@ router.post("/", withAuth, async (req, res) => {
 
     res.json(newPost)
   } catch (e) {
-    res.status(500).json({ message: "Server Error" })
+    res.status(500).json({ message: "Server Error create" })
   }
 })
 
@@ -104,7 +103,7 @@ router.put("/:id", withAuth, async (req, res) => {
       res.json(updatePost)
     }
   } catch (e) {
-    res.status(500).json({ message: "Server error" })
+    res.status(500).json({ message: "Server error update" })
   }
 })
 
@@ -125,7 +124,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       res.json(deletePost)
     }
   } catch (e) {
-    res.status(500).json({ message: "Server Error" })
+    res.status(500).json({ message: "Server Error delete" })
   }
 })
 
