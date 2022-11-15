@@ -48,10 +48,10 @@ router.get("/login", (req, res) => {
 // rendering sign up page
 // redirecting users to the login once they sign up
 router.get("/signup", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/")
-    return
-  }
+  // if (req.session.logged_in) {
+    // res.redirect("/login")
+    // return
+  // }
   res.render("signup")
 })
 
