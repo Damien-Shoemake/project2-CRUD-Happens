@@ -1,4 +1,8 @@
-.hidden,
+body, html {
+  height: 100%;
+}
+
+.hidden
 .theBucketList {
   display: none;
 }
@@ -18,11 +22,9 @@ ul {
 }
 
 body {
-  background-image: url(./images/pTodoBRgc.jpg);
+  background: url(./images/pTodoBRgc.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  box-sizing: border-box;
 }
