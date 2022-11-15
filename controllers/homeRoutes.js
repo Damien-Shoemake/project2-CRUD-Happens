@@ -80,7 +80,7 @@ router.get("/post/:id", async (req, res) => {
     }
 
     const singlePost = post.get({ plain: true })
-
+    console.log(singlePost)
     res.render("single-post", {
       singlePost,
       logged_in: req.session.logged_in,
