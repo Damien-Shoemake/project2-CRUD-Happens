@@ -1,6 +1,6 @@
 <!-- Post Form -->
-<div class="card mb-3">
-  <div class="card-header text-primary fw-bold fs-5">{{title}}
+<div class="card border-primary mb-3">
+  <div class="card-header text-bg-primary fw-bold fs-5">{{title}}
     <h6 class="text-end">Posted by
       {{user.name}}
       on
@@ -10,10 +10,11 @@
     <p>
       {{post_content}}
     </p>
+    <button type="submit" class="btn btn-info"><a
+        class="link"
+        style="text-decoration: none"
+        href="/dashboard/edit/{{id}}"
+      >Edit Post</a>
+    </button>
   </div>
-  <button class="text-primary"><a
-      style="text-decoration: none"
-      href="/dashboard/edit/{{id}}"
-    >Edit Post</a>
-  </button>
 </div>

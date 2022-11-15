@@ -1,3 +1,4 @@
+
 <!-- header start-->
 <div class="container">
   <div class="pt-4 pb-2 py-5 mt-5 text-center">
@@ -7,31 +8,36 @@
       <p class="lead mb-4">Quickly find bucket list ideas. Create your own
         bucket list. Follow others as they journey to the end.</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button
-          id="homeIdea"
-          type="button"
-          class="btn btn-info btn-lg px-4 my-4"
-        >Get an idea</button>
+        <button id="homeIdea" type="button" class="btn btn-info btn-lg px-4 my-4" data-bs-toggle="modal"
+          data-bs-target="#apiSection">Get an idea</button>
       </div>
     </div>
   </div>
 </div>
 <!-- header end -->
 
-<!-- api button click result start -->
-<div id="apiSection" class="card text-center hidden">
-  <h5 class="card-header">Let's go!</h5>
-  <div class="card-body">
-    <h5 id="card-title" class="card-title mb-0 pb-3">API Result here</h5>
-    {{#if logged_in}}
-    {{!-- <button id="addBucketItem" class="btn btn-primary">Add to my bucket list!</button> --}}
-    <a id="addBucketItem" class="btn btn-primary" href="/dashboard/newpost">Add to my bucket list!</a>
-    {{else}}
-    <a class="btn btn-primary" href="/login">Login to add this idea to your 🪣</a>
-    {{/if}}
+<!-- Modal -->
+<div class="modal fade border-primary" id="apiSection" tabindex="-1" aria-labelledby="apiSection" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-bg-primary">
+        <h1 class="modal-title fs-5" id="apiSection">Bucket List Idea</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 id="card-title" class="card-title mb-0 pb-3"></h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+        {{#if logged_in}}
+        <a id="addBucketItem" class="btn btn-primary" href="/dashboard/newpost">Add to my 🪣</a>
+        {{else}}
+        <a class="btn btn-primary" href="/login">Login to add this idea to your 🪣</a>
+        {{/if}}
+      </div>
+    </div>
   </div>
 </div>
-<!-- api button click result end -->
 
 <!-- Post Form -->
 <ul>
