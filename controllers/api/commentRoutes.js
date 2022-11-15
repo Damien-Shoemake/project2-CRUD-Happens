@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const { Comment } = require("../../models")
+const { Comment, User, Post } = require("../../models")
 const withAuth = require("../../utils/auth")
 
 //get all comments
@@ -12,6 +12,36 @@ router.get("/", async (req, res) => {
   }
 })
 
+//get one comment
+router.get('/:id', async (req, res) => {
+  try {
+    const oneComment = await Comment.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: ['id', 'user_id', 'post_id', 'comment'],
+      include: [
+        {
+          model: User,
+          attributes: ['name']
+        },
+        {
+          model: Post,
+          attributes: ['id', 'title', 'post_content']
+        }
+      ]
+
+      
+    })
+    if(!oneComment){
+      res.status(404).json({ message: 'No comment with this id found'})
+    } else {
+      res.json(oneComment)
+    }
+  } catch {
+    res.status(500).json({ message: 'Server Error one comment'})
+  }
+})
 //post a comment
 router.post("/", withAuth, async (req, res) => {
   try {
