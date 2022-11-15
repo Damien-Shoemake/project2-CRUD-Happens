@@ -10,14 +10,15 @@
         name="comment-body"
         class="form-control mb-3"
         rows="3"
-      ></textarea>
+      >
+      </textarea>
       <button type="submit" class="btn btn-primary">Add comment</button>
     </form>
   </div>
 </div>
 {{/if}}
 
-{{>comments post.comments}}
+{{>comments singlePost.comments}}
 {{#if logged_in}}
 <script src="/js/comment.js"></script>
 {{/if}}
