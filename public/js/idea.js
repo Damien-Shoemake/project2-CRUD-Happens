@@ -1,9 +1,8 @@
-const homeIdea      = document.getElementById("homeIdea");
-const addBucketItem = document.getElementById("addBucketItem");
+const homeIdea = document.getElementById("homeIdea")
 
 async function idea() {
   const parent = $(this).parent().parent().parent().parent().siblings(".hidden")
-//   $(parent).toggleClass("show")
+  //   $(parent).toggleClass("show")
   $(parent).removeClass("hidden")
   $(parent).addClass("show")
 
@@ -15,19 +14,22 @@ async function idea() {
     })
     .then((result) => {
       let title = document.getElementById("card-title")
-      let ideaResult = title.innerHTML = result.item
-      console.log(result);
-      console.log(result.item);
+      let ideaResult = (title.innerHTML = result.item)
 
-    function addNewBucketItem (ideaResult) {
-        const bucketItem = document.getElementById("theBucketItem");
-        const bucketList = document.getElementById("theBucketList");
-        bucketList.removeAttribute('class')
-        bucketItem.textContent = result.item;    
-    }
-    addBucketItem.onclick = addNewBucketItem;
+      console.log(result)
+      console.log(result.item)
 
+      let addBucketItem = document.getElementById("addBucketItem")
+      console.log(addBucketItem)
+
+      addBucketItem.onclick = () => {
+        // add "ideaResult" to localStorage
+        localStorage.setItem("idea", ideaResult)
+        const bucketItem = document.getElementById("theBucketItem")
+        const bucketList = document.getElementById("theBucketList")
+        bucketList.removeAttribute("class")
+        bucketItem.textContent = result.item
+      }
     })
 }
-homeIdea.addEventListener("click", idea);
-
+homeIdea.addEventListener("click", idea)

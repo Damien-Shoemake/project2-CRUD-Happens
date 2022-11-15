@@ -1,29 +1,28 @@
-.hidden, .theBucketList {
-    display: none;
+.hidden,
+.theBucketList {
+  display: none;
 }
 
 .show {
-    display: initial;
+  display: initial;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #new-trigger {
-    position: relative;
-    left: 40%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  }
-  
-  body {
-    background-image: url(./images/pTodoBRgc.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
+#new-trigger {
+  position: relative;
+}
+
+body {
+  background-image: url(./images/pTodoBRgc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}

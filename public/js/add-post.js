@@ -24,6 +24,15 @@ async function newFormHandler(event) {
   }
 }
 
+// if there is an idea in localStorage, then update the title with the idea from localStorage
+// document.querySelector('input[name="post-title"]').value = localStorage.getItem("idea")
+// delete idea from localStorage
+const storedIdea = localStorage.getItem("idea")
+if (storedIdea) {
+  document.querySelector('input[name="post-title"]').value = storedIdea
+  localStorage.removeItem("idea")
+}
+
 document
   .querySelector("#new-post-form")
   .addEventListener("submit", newFormHandler)

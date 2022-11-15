@@ -2,12 +2,15 @@
 <ul>
     {{#each posts as |post|}}
     <li>
-    {{> dashboard-post-info post}}
+        {{> dashboard-post-info post}}
     </li>
     {{/each}}
 </ul>
 {{/if}}
 
-<button id="new-trigger" type="submit" class="btn btn-primary mb-3">+ New Bucket List</button>
+<div class="text-center">
+    <button id="new-trigger" type="submit" class="btn btn-primary mb-3">+ New Bucket List</button>
+</div>
+
 
 <script src="/js/dashboard.js"></script>
