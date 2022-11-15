@@ -2,15 +2,6 @@ body, html {
   height: 100%;
 }
 
-.hidden
-.theBucketList {
-  display: none;
-}
-
-.show {
-  display: initial;
-}
-
 ul {
   list-style: none;
   padding: 0;
