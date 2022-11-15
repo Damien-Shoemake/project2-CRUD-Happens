@@ -5,6 +5,7 @@ async function signupFormHandler(event) {
   const name = document.querySelector("#username-signup").value.trim()
   const password = document.querySelector("#password-signup").value.trim()
   const loginLink = document.querySelector("#login-link")
+  console.log(name)
 
   if (name && password) {
     const response = await fetch("/api/user", {
@@ -15,6 +16,7 @@ async function signupFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     })
+    console.log(response);
 
     if (response.ok) {
       document.location.replace("/dashboard")

@@ -58,13 +58,8 @@ router.post("/", async (req, res) => {
       password: req.body.password,
     })
 
-    req.session.save(() => {
-      req.session.user_id = newUser.id
-      req.session.name = newUser.name
-      req.session.logged_in = true
-
       res.status(201).json(newUser)
-    })
+    
   } catch (error) {
     res.status(400).json(error)
   }
