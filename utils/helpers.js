@@ -8,5 +8,10 @@ module.exports = {
         }
     
         return word;
+      },
+      validate_id: (value, operator, user) => {
+        if (value === user) return `<button id='delete-comment' class='btn btn-danger'>
+        Delete Comment</button>`
+        return;
       }
 }
