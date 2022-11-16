@@ -6,7 +6,7 @@
       {{singlePost.post_content}}
     </p>
     <p>
-  {{singlePost.comments.length}} comment(s)
+      {{singlePost.comments.length}} comment(s)
     </p>
   </div>
 </div>
@@ -17,11 +17,7 @@
   <div class="card-header text-bg-primary fw-bold fs-5 mb-3">Comment</div>
   <div class="mb-3">
     <form class="card-body" id="comment-form">
-      <textarea
-        name="comment-body"
-        class="form-control mb-3"
-        rows="3"
-      >
+      <textarea name="comment-body" class="form-control mb-3" rows="3">
       </textarea>
       <button type="submit" class="btn btn-primary">Add comment</button>
     </form>
@@ -30,29 +26,23 @@
 {{/if}}
 
 <div class='comments'>
-    {{#each singlePost.comments}}
-    <section class='card mb-3' data-commentID={{this.id}}>
-      <div class='card-header text-primary fw-bold fs-5 mb-3'>
-
-        <div class='meta'>
-          {{user.name}}
-          on
-          {{format_date created_at}}
-          commented:
-        </div>
-        <div class='text-dark'>
-          {{this.comment}}
-        </div>
-        <div class='mb-3'>
-          {{#validate_id this.user_id '===' ../user_id}}
-          
-          {{/validate_id}}
-        </div>
+  {{#each singlePost.comments}}
+  <div class="card border-primary mb-3" data-commentID={{this.id}}>
+    <div class="card-header text-bg-primary mb-3 fw-bold fs-5">Comment by {{user.name}} on {{format_date created_at}}
+    </div>
+    <div class="card-body">
+      <p>
+        {{this.comment}}
+      </p>
+      <div class='mb-3'>
+        {{#validate_id this.user_id '===' ../user_id}}
+        {{/validate_id}}
       </div>
-    </section>
+    </div>
+  </div>
   {{/each}}
 </div>
-{{!-- {{>comments singlePost.comments}} --}}
+
 {{#if logged_in}}
 <script src="/js/comment.js"></script>
 {{/if}}
