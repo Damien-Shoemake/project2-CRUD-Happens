@@ -1,4 +1,3 @@
-
 <!-- header start-->
 <div class="container">
   <div class="pt-4 pb-2 py-5 mt-5 text-center">
@@ -30,9 +29,9 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
         {{#if logged_in}}
-        <a id="addBucketItem" class="btn btn-primary" href="/dashboard/newpost">Add to my 🪣</a>
+        <a id="addBucketItem" class="btn btn-primary" href="/dashboard/newpost" data-bs-toggle="tooltip" title="tell the world!">Add to my 🪣</a>
         {{else}}
-        <a class="btn btn-primary" href="/login">Login to add this idea to your 🪣</a>
+        <a class="btn btn-primary" href="/login" data-bs-toggle="tooltip" title="please login to add to your bucket list">Login to add this idea to your 🪣</a>
         {{/if}}
       </div>
     </div>
@@ -51,3 +50,9 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="./js/idea.js"></script>
+<script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
