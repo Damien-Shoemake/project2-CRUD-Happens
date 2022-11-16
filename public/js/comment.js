@@ -59,4 +59,4 @@ async function commentFormHandler(event) {
   
   }
   
-  document.querySelector('#comment-form').addEventListener('click', deleteFormHandler);
+  document.querySelector('#delete-comment').addEventListener('click', deleteFormHandler);
