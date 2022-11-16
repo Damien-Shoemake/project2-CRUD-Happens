@@ -11,6 +11,10 @@
 ## Usage
 
 Below you will find a gif demonstrating the use of the webpage. when entering the page, the user will be greeted with the option of signing in. When signed in, the user will have the option of creating a post, commenting on another user's post, or even obtaining a randomly generated bucket list idea.
+- ![Gif 1](/assets/BucketListGif1.gif)
+- ![Gif 2](/assets/BucketListGif2.gif)
+- ![Gif 3](/assets/BucketListGif3.gif)
+- ![Gif 4](/assets/BucketListGif4.gif)
 
 ## Credits
 
@@ -34,7 +38,7 @@ APIs Used
 
 MIT License
 
-Copyright (c) [2022] [Event-Easy]
+Copyright (c) [2022] [Bucket-List-Blog]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
