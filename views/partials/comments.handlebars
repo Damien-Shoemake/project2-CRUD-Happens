@@ -1,6 +1,6 @@
 <div class='comments'>
   {{#each this}}
-  <div class="card border-primary mb-3" >
+  <div class="card border-primary mb-3" id="edit-comment-form">
         <div class="card-header text-bg-primary mb-3 fw-bold fs-5">
           <h6 class="text-end">Comment by {{user.name}} on {{format_date created_at}}</h6>
         </div>
@@ -8,11 +8,10 @@
           <p>
             {{comment}}
           </p>
-           <button type="submit" class="btn btn-primary">Edit Comment</button>
             <button class="btn btn-primary" id="delete-comment-btn">Delete</button>
         </div>
       </div>
   {{/each}}
 </div>
 
-<script src="/js/deleteComment.js"></script>
+<script src="/js/delete-comment.js"></script>
