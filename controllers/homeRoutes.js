@@ -62,7 +62,7 @@ router.get("/post/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ["id", "title", "post_content"],
+      attributes: ["id", "title", "post_content", "user_id"],
       include: [
         {
           model: Comment,
@@ -80,11 +80,11 @@ router.get("/post/:id", async (req, res) => {
     }
 
     const singlePost = post.get({ plain: true })
-    console.log(singlePost)
     res.render("single-post", {
       singlePost,
       logged_in: req.session.logged_in,
       name: req.session.name,
+      user_id: req.session.user_id
     })
   } catch (e) {
     res.status(500).json({ message: "Server Error" })

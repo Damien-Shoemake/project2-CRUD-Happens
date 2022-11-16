@@ -5,6 +5,9 @@
     <p>
       {{singlePost.post_content}}
     </p>
+    <p>
+  {{singlePost.comments.length}} comment(s)
+    </p>
   </div>
 </div>
 {{!-- {{> post-info post}} --}}
@@ -27,8 +30,30 @@
 </div>
 {{/if}}
 
-{{>comments singlePost.comments}}
+<div class='comments'>
+    {{#each singlePost.comments}}
+    <section class='card mb-3'>
+      <div class='card-header text-primary fw-bold fs-5 mb-3'>
+
+        <div class='meta'>
+          {{user.name}}
+          on
+          {{format_date created_at}}
+          commented:
+        </div>
+        <div class='text-dark'>
+          {{this.comment}}
+        </div>
+        <div class='mb-3'>
+          {{#validate_id this.user_id '===' ../user_id}}
+          
+          {{/validate_id}}
+        </div>
+      </div>
+    </section>
+  {{/each}}
+</div>
+{{!-- {{>comments singlePost.comments}} --}}
 {{#if logged_in}}
 <script src="/js/comment.js"></script>
-{{!-- <script src="/js/deleteComment.js"></script> --}}
 {{/if}}
