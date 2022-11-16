@@ -1,7 +1,7 @@
 <!-- header start-->
 <div class="container">
   <div class="pt-4 pb-2 py-5 mt-5 text-center">
-    <p class="d-block mx-auto mb-4 display-1" data-bs-toggle="tooltip" title="lets go">🪣</p>
+    <p class="d-block mx-auto mb-4 display-1">🪣</p>
     <h1 class="fw-bold display-2">Bucket List Blog</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Quickly find bucket list ideas. Create your own
@@ -29,9 +29,9 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
         {{#if logged_in}}
-        <a id="addBucketItem" class="btn btn-primary" href="/dashboard/newpost">Add to my 🪣</a>
+        <a id="addBucketItem" class="btn btn-primary" href="/dashboard/newpost" data-bs-toggle="tooltip" title="tell the world!">Add to my 🪣</a>
         {{else}}
-        <a class="btn btn-primary" href="/login">Login to add this idea to your 🪣</a>
+        <a class="btn btn-primary" href="/login" data-bs-toggle="tooltip" title="please login to add to your bucket list">Login to add this idea to your 🪣</a>
         {{/if}}
       </div>
     </div>
