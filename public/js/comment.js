@@ -36,6 +36,7 @@ async function commentFormHandler(event) {
    .addEventListener("submit", commentFormHandler)
 
 
+
   async function deleteFormHandler(event) {
     event.preventDefault();
 
