@@ -1,3 +1,5 @@
+let deleteCommentButton = document.querySelector('#delete-comment');
+
 async function commentFormHandler(event) {
   event.preventDefault()
 
@@ -34,4 +36,29 @@ async function commentFormHandler(event) {
    .addEventListener("submit", commentFormHandler)
 
 
- 
+
+  async function deleteFormHandler(event) {
+    event.preventDefault();
+
+   let id = deleteCommentButton.parentElement.parentElement.parentElement.getAttribute('data-commentID');
+
+  
+    const response = await fetch(`/api/comment/${id}`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+          id: id
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert(response.statusText);
+      }
+  
+  }
+  
+deleteCommentButton.addEventListener('click', deleteFormHandler);
