@@ -1,21 +1,18 @@
 <div class='comments'>
   {{#each this}}
-    <section class='card mb-3'>
-      <div class="card-header text-primary fw-bold fs-5 mb-3">
-
-      <div class='meta'>
-        {{user.name}}
-        on
-        {{format_date created_at}}
-        commented: 
+  <div class="card border-primary mb-3" >
+        <div class="card-header text-bg-primary mb-3 fw-bold fs-5">
+          <h6 class="text-end">Comment by {{user.name}} on {{format_date created_at}}</h6>
+        </div>
+        <div class="card-body">
+          <p>
+            {{comment}}
+          </p>
+           <button type="submit" class="btn btn-primary">Edit Comment</button>
+            <button class="btn btn-primary" id="delete-comment-btn">Delete</button>
+        </div>
       </div>
-      <div class='text-dark'>
-        {{comment}}
-      </div>
-      <div class="mb-3">
-        <button id='delete-comment' class="btn btn-danger"> Delete Comment</button>
-      </div>
-    </div>
-    </section>
   {{/each}}
 </div>
+
+<script src="/js/deleteComment.js"></script>

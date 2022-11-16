@@ -7,7 +7,7 @@
           <p>
             {{post_content}}
           </p>
-          <a href="/post/{{id}}">{{comments.length}}
+          <a data-bs-toggle="tooltip" title="Tell us about your opinions!" href="/post/{{id}}">{{comments.length}}
           {{format_plural "comment" comment.length}}</a>
         </div>
       </div>

@@ -1,9 +1,9 @@
-{{> post-info post}}
+{{>post-info singlePost}}
 
 {{#if logged_in}}
 <!-- Comment Form -->
-<div class="card mb-3">
-  <div class="card-header text-primary fw-bold fs-5 mb-3">Comment</div>
+<div class="card border-primary mb-3">
+  <div class="card-header text-bg-primary fw-bold fs-5 mb-3">Comment</div>
   <div class="mb-3">
     <form class="card-body" id="comment-form">
       <textarea
@@ -21,5 +21,5 @@
 {{>comments singlePost.comments}}
 {{#if logged_in}}
 <script src="/js/comment.js"></script>
-{{!-- <script src="/js/deleteComment.js"></script> --}}
+
 {{/if}}
